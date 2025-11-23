@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Secret Box</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <h1 class="brand">Secret Box</h1>
+  </header>
+
+  <main class="container">
+    <!-- Intro / name input -->
+    <section id="intro" class="card">
+      <h2>Welcome</h2>
+      <p>Enter your name to start the mystery drop</p>
+      <div class="form-row">
+        <input id="playerName" placeholder="Your name..." />
+        <button id="startBtn" class="btn primary">Start</button>
+      </div>
+      <p class="muted">* Each browser will not be able to re-draw items already claimed on that browser.</p>
+    </section>
+
+    <!-- Main area (hidden until start) -->
+    <section id="mainArea" class="card hidden">
+      <div class="info">
+        <div>Player: <strong id="playerLabel">—</strong></div>
+        <div>Items remaining for you: <strong id="remainingText">0</strong></div>
+        <div class="badge">11 Items · 1 Secret</div>
+      </div>
+
+      <div class="stage">
+        <div id="boxWrap" class="box-wrap">
+          <div id="box3d" class="box-3d">
+            <video id="assetVideo" class="asset-video" playsinline muted loop></video>
+            <div class="frame-dashed"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="shuffleBtn" class="btn accent">Shuffle & Reveal</button>
+        <button id="claimBtn" class="btn" disabled>Claim</button>
+      </div>
+
+      <div id="resultText" class="result">You got: —</div>
+    </section>
+  </main>
+
+  <!-- success modal -->
+  <div id="successModal" class="modal hidden">
+    <div class="modal-card">
+      <h3 id="successTitle">Success!</h3>
+      <p id="successBody">Claim details</p>
+      <button id="closeSuccess" class="btn primary">Close</button>
+    </div>
+  </div>
+
+  <!-- confetti / hearts root -->
+  <div id="confetti"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

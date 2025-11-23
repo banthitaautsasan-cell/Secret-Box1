@@ -1,0 +1,67 @@
+:root{
+  --bg:#ffeef6;
+  --card:#fff7fb;
+  --pink:#ff4da6;
+  --muted:#9b6f86;
+  --accent:#ff6fb4;
+  --shadow: 0 8px 24px rgba(255,77,166,0.12);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background: linear-gradient(180deg,var(--bg) 0%, #fff 60%);
+  min-height:100vh;
+  color:#3b2a36;
+}
+.top{padding:28px 20px;text-align:center}
+.brand{
+  margin:0;font-size:34px;color:var(--pink);
+  letter-spacing:0.5px;
+}
+.container{max-width:920px;margin:0 auto;padding:12px}
+.card{
+  background:var(--card);
+  border-radius:16px;padding:20px;margin:16px 0;box-shadow:var(--shadow);
+}
+.form-row{display:flex;gap:12px;align-items:center;margin-top:12px}
+input#playerName{
+  flex:1;padding:12px 14px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);
+  font-size:16px;outline:none;background:white;
+}
+.btn{padding:10px 18px;border-radius:12px;border:0;background:transparent;cursor:pointer;font-weight:600}
+.btn.primary{background:var(--pink);color:white}
+.btn.accent{background:linear-gradient(90deg,var(--accent),var(--pink));color:white}
+.muted{color:var(--muted);font-size:13px;margin-top:10px}
+
+.info{display:flex;gap:18px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
+.info .badge{background:var(--pink);color:white;padding:6px 12px;border-radius:20px;font-weight:700;text-shadow:0 1px 0 rgba(0,0,0,0.05)}
+
+.stage{text-align:center;padding:18px 10px}
+.box-wrap{display:inline-block;perspective:1200px}
+.box-3d{
+  width:360px;height:300px;border-radius:14px;background:linear-gradient(180deg,#fff,#fff7fb);
+  display:flex;align-items:center;justify-content:center;position:relative;transform-style:preserve-3d;
+  transition:transform 800ms cubic-bezier(.2,.8,.2,1);
+  box-shadow: 0 20px 40px rgba(219,121,168,0.08);
+}
+.box-3d.rotate{transform: rotateX(20deg) rotateY(10deg) scale(1.03) rotateZ(4deg)}
+.frame-dashed{position:absolute;inset:18px;border-radius:12px;border:3px dashed rgba(255,79,150,0.3);pointer-events:none}
+.asset-video{width:320px;height:240px;border-radius:10px;object-fit:cover;display:block;background:#fff}
+
+.controls{text-align:center;margin-top:12px;display:flex;gap:12px;justify-content:center}
+.result{margin-top:12px;text-align:center;color:var(--pink);font-weight:700}
+
+/* modal */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(10,10,10,0.25)}
+.modal-card{background:white;padding:28px;border-radius:12px;min-width:320px;text-align:center;box-shadow:0 24px 48px rgba(0,0,0,0.12)}
+.hidden{display:none}
+
+/* confetti / hearts */
+#confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden}
+
+/* mobile */
+@media (max-width:520px){
+  .box-3d{width:300px;height:220px}
+  .asset-video{width:260px;height:180px}
+}
